@@ -1,16 +1,24 @@
 <div class="row">
-    {% for product in product_list %}
-        <div class="col-3 mt-5">
-            <div class="card h-100">
-                {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.title }}" height="300">
-                {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.title }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
-                    <a href="{% url 'products:product' product.slug %}" class="btn btn-primary">Ver mas</a>
-                </div>
-            </div>
-        </div>                
-    {% endfor %}
+  {% for product in product_list %}
+  <div class="col-3 mt-5">
+    <div class="card h-100">
+      {% if product.image %}
+      <img
+        src="{{ product.image.url }}"
+        alt="{{ product.title }}"
+        height="300"
+      />
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <a
+          href="{% url 'products:product' product.slug %}"
+          class="btn btn-primary"
+          >Ver mas</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
