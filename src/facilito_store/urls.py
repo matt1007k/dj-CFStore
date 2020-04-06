@@ -13,7 +13,8 @@ urlpatterns = [
     path('usuarios/logout/', logout_view, name="logout"),
     path('usuarios/registro/', register_view, name="register"),
     path('', ProductListView.as_view(), name="index"),
-    path('productos/', include('products.urls', namespace='products'))
+    path('productos/', include('products.urls', namespace='products')),
+    path('carrito/', include('carts.urls'))
 ]
 
 if settings.DEBUG:
